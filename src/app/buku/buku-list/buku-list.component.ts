@@ -12,7 +12,9 @@ export class BukuListComponent implements OnInit {
   constructor(private bukuservService: BukuservService) { }
 
   @Input() bukuParent: Buku[];
+  total: number;
   @Output() dariChildParent: EventEmitter<Buku> = new EventEmitter();
+  totalQty: any;
 
 
   ngOnInit() {
@@ -22,5 +24,15 @@ export class BukuListComponent implements OnInit {
     this.bukuParent.splice(i,1);
   }
 
+  getTotal() {
+    let total = 0;
+    for (let i = 0; i < this.bukuParent.length; i++) {
+      if (this.bukuParent[i].qty) {
+        total += this.bukuParent[i].qty;
+        this.totalQty = total;
+      }
+    }
+    return total;
+  }
 
 }
