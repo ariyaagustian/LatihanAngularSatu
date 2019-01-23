@@ -9,15 +9,20 @@ import {BukuservService} from '../bukuserv.service';
   providers: [BukuservService]
 })
 export class BukuListComponent implements OnInit {
+  constructor(private bukuservService: BukuservService) { }
 
   @Input() bukuParent: Buku[];
   @Output() dariChildParent: EventEmitter<Buku> = new EventEmitter();
-  constructor(private bukuservService: BukuservService) { }
+
+
+  sum(sum: number, item: number): number {
+    return sum + item;
+  }
 
   ngOnInit() {
   }
 
-  showname(i) {
+  deleteBuku(i) {
     this.bukuParent.splice(i,1);
   }
 
