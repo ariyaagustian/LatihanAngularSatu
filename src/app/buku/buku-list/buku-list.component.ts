@@ -15,10 +15,6 @@ export class BukuListComponent implements OnInit {
   @Output() dariChildParent: EventEmitter<Buku> = new EventEmitter();
 
 
-  sum(sum: number, item: number): number {
-    return sum + item;
-  }
-
   ngOnInit() {
   }
 
