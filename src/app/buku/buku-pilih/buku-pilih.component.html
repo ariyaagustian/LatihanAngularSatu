@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+        <div class="form-row align-items-center">
+          <div class="col-sm-3">
+            <label class="sr-only">ISBN</label>
+            <input type="text" class="form-control mb-2" [(ngModel)]="bukuInfo.isbn" id="ISBN" placeholder="ISBN" >
+          </div>
+          <div class="col-sm-6">
+            <label class="sr-only">NAMA BUKU</label>
+            <input type="text" class="form-control mb-2" [(ngModel)]="bukuInfo.nama_buku" id="nama-buku" placeholder="Nama Buku" >
+          </div>
+          <div class="col-sm-2">
+            <label class="sr-only">QTY</label>
+            <input type="number" class="form-control mb-2" [(ngModel)]="bukuInfo.qty" id="qty" placeholder="Qty" >
+          </div>
+          <div class="col-sm-1">
+            <button type="button" class="btn btn-primary mb-2" (click)="pilihBuku()">Pilih</button>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
