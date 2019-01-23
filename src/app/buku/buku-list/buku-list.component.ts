@@ -9,12 +9,14 @@ import {BukuservService} from '../bukuserv.service';
   providers: [BukuservService]
 })
 export class BukuListComponent implements OnInit {
+  private totalBuku: any;
   constructor(private bukuservService: BukuservService) { }
 
   @Input() bukuParent: Buku[];
   total: number;
   @Output() dariChildParent: EventEmitter<Buku> = new EventEmitter();
   totalQty: any;
+  private buku: any[];
 
 
   ngOnInit() {
@@ -33,6 +35,18 @@ export class BukuListComponent implements OnInit {
       }
     }
     return total;
+  }
+
+  getBuku() {
+    this.buku = [];
+    for (let i = 0; i < this.bukuParent.length; i++) {
+      if (this.bukuParent[i].nama_buku) {
+        this.buku.push(this.bukuParent[i].nama_buku);
+        this.totalBuku = this.buku;
+      }
+    }
+    console.log(this.buku);
+    return alert('Buku yang dipinjam adalah : ' + this.buku);
   }
 
 }
