@@ -35,6 +35,7 @@ export class ReactiveBukuComponent implements OnInit {
     bukuReactiveModel.qty = this.bukuForm.get('qty').value;
     console.log(bukuReactiveModel);
     this.bukuList.push(bukuReactiveModel);
+    this.bukuForm.reset();
   }
 
   cekIsEmpty(control: FormControl): { [s: string]: boolean } {
