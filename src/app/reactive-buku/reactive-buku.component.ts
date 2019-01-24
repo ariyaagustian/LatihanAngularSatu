@@ -40,8 +40,7 @@ export class ReactiveBukuComponent implements OnInit {
   cekIsEmpty(control: FormControl): { [s: string]: boolean } {
     if (control.value && control.value.trim().length === 0) {
       return {'blank': true};
-    }
-    return null;
+    }return null;
   }
 
   deleteBuku(i) {
